@@ -250,7 +250,7 @@ export default function Home() {
 
         <div className="mt-8 text-gray-300">
           <p>gkdirector14@gmail.com</p>
-          <p className="mt-2">+91 XXXXX XXXXX</p>
+          <p className="mt-2">+91 9626117994</p>
         </div>
       </section>
 
