@@ -184,17 +184,43 @@ export default function Home() {
         <h2 className="text-4xl text-center mb-16">Short Films</h2>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {["efehaY81rZM", "CWXtUwxU8SA"].map((id, index) => (
+          {[
+            { type: "youtube", id: "efehaY81rZM" }, // House Husband
+            {
+              type: "drive",
+              link: "https://drive.google.com/file/d/1uEjNdlq_atAnB4ZfNWhJC-ttH4NYr883/view?usp=sharing",
+              title: "Polampal",
+            },
+          ].map((film, index) => (
             <motion.div
               key={index}
               whileHover={{ scale: 1.02 }}
-              className="relative w-full h-80 overflow-hidden rounded-xl shadow-2xl"
+              className="relative w-full h-80 overflow-hidden rounded-xl shadow-2xl flex items-center justify-center bg-black"
             >
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src={`https://www.youtube.com/embed/${id}`}
-                allowFullScreen
-              ></iframe>
+              {film.type === "youtube" ? (
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src={`https://www.youtube.com/embed/${film.id}`}
+                  allowFullScreen
+                ></iframe>
+              ) : (
+                <div
+                  className="relative w-full h-full cursor-pointer group"
+                  onClick={() => window.open(film.link, "_blank")}
+                >
+                  <Image
+                    src="/images/polampal_title.png" // your poster image
+                    alt="Polampal"
+                    fill
+                    className="object-cover"
+                  />
+
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col justify-center items-center text-center">
+                    <h3 className="text-2xl font-semibold">{film.title}</h3>
+                    <p className="mt-2 text-gray-300">Click to Watch</p>
+                  </div>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
