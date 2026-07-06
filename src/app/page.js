@@ -29,7 +29,7 @@ export default function Home() {
             className="w-64 h-64 md:w-80 md:h-80 relative rounded-full overflow-hidden border-4 border-white shadow-2xl md:translate-x-6"
           >
             <Image
-              src="/images/profile.jpg"
+              src="/images/profile.webp"
               alt="Gokul Kanna"
               fill
               className="object-cover"
