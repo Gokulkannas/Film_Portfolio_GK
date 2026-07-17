@@ -53,7 +53,7 @@ export default function Home() {
             </p>
 
             <a
-              href="/Gokulkanna_resumae.pdf"
+              href="/GokulKanna_resumae.pdf"
               target="_blank"
               className="inline-block mt-8 px-6 py-3 border border-white rounded-full 
               hover:bg-white hover:text-black transition duration-500 transform hover:scale-105"
