@@ -1,13 +1,34 @@
+
 "use client";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+const credits = [
+  {
+    image: "/images/credits/crime-patrol-credit-1.jpg",
+    title: "Assistant Director Credit",
+    description: "On-screen professional credit from Crime Patrol.",
+  },
+  {
+    image: "/images/credits/crime-patrol-credit-2.jpg",
+    title: "Production Credits",
+    description: "Screenshot from the series credits.",
+  },
+  {
+    image: "/images/credits/crime-patrol-credit-3.jpg",
+    title: "Crime Patrol",
+    description: "Additional professional credit.",
+  },
+];
+
 export default function Home() {
   return (
     <main className="bg-black text-white font-light overflow-x-hidden">
+
       {/* HERO SECTION */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+
         <Image
           src="/images/film1.jpg"
           alt="Cinematic Background"
@@ -20,13 +41,14 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black"></div>
         <div className="absolute inset-0 opacity-20 mix-blend-overlay bg-[url('/images/grain.png')]"></div>
 
-        <div className="relative z-10 flex flex-col md:flex-row items-center gap-16 px-10">
+        <div className="relative z-10 flex flex-col md:flex-row items-center gap-16 px-6 md:px-10 py-20">
+
           {/* PROFILE IMAGE */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="w-64 h-64 md:w-80 md:h-80 relative rounded-full overflow-hidden border-4 border-white shadow-2xl md:translate-x-6"
+            className="w-64 h-64 md:w-80 md:h-80 relative rounded-full overflow-hidden border-4 border-white shadow-2xl"
           >
             <Image
               src="/images/profile.webp"
@@ -49,14 +71,18 @@ export default function Home() {
             </h1>
 
             <p className="mt-6 text-xl text-gray-300">
-              Aspiring Filmmaker | Assistant Director
+              Assistant Director | Writer | Filmmaker
+            </p>
+
+            <p className="mt-3 text-sm tracking-widest text-gray-400">
+              CINEMA • STORYTELLING • DIRECTION
             </p>
 
             <a
-              href="/Gokulkanna_resumae.pdf"
+              href="/GokulKanna_resume.pdf"
               target="_blank"
-              className="inline-block mt-8 px-6 py-3 border border-white rounded-full 
-              hover:bg-white hover:text-black transition duration-500 transform hover:scale-105"
+              rel="noopener noreferrer"
+              className="inline-block mt-8 px-8 py-3 border border-white rounded-full hover:bg-white hover:text-black transition duration-500 transform hover:scale-105"
             >
               View Resume
             </a>
@@ -64,46 +90,59 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* ABOUT SECTION */}
       <motion.section
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="py-24 px-10 text-center bg-zinc-950"
+        className="py-24 px-6 md:px-10 text-center bg-zinc-950"
       >
-        <h2 className="text-4xl font-semibold mb-8 tracking-wide">About Me</h2>
-
-        <p className="max-w-3xl mx-auto text-gray-400 leading-8 text-lg">
-          I am an aspiring Assistant Director passionate about transforming
-          scripts into structured cinematic experiences. My strengths lie in
-          script breakdowns, shot division, scheduling, and ensuring seamless
-          on-set coordination. I combine creative sensitivity with strong
-          organizational discipline to support directors in bringing their
-          vision to life efficiently and effectively.
-        </p>
-      </motion.section>
-
-      {/* SEEKING OPPORTUNITIES */}
-      <section className="py-20 px-10 text-center bg-black border-t border-zinc-800">
-        <h2 className="text-3xl font-semibold mb-6 tracking-wide">
-          Seeking Assistant Director Opportunities
+        <h2 className="text-4xl font-semibold mb-8 tracking-wide">
+          About Me
         </h2>
 
         <p className="max-w-3xl mx-auto text-gray-400 leading-8 text-lg">
-          I am actively seeking opportunities to work as an Assistant Director
-          in feature films, short films, and web series. I am deeply interested
-          in pre-production planning, shot breakdowns, scheduling, and on-set
-          execution.
+          I am an Assistant Director, Writer and aspiring Filmmaker
+          passionate about bringing stories to life through cinema.
+          I have worked as an Assistant Director on the Crime Patrol
+          web series and have independently written, directed and
+          produced three short films.
+
+          My creative strengths include screenplay development,
+          script breakdowns, shot division, scene planning and
+          on-set coordination. I combine creative thinking with
+          organizational skills to contribute effectively to
+          filmmaking and production teams.
+        </p>
+      </motion.section>
+
+
+      {/* SEEKING OPPORTUNITIES */}
+      <section className="py-20 px-6 md:px-10 text-center bg-black border-t border-zinc-800">
+
+        <h2 className="text-3xl font-semibold mb-6 tracking-wide">
+          Seeking Film Opportunities
+        </h2>
+
+        <p className="max-w-3xl mx-auto text-gray-400 leading-8 text-lg">
+          I am interested in working with passionate directors
+          and production houses on feature films, web series and
+          digital projects. I am enthusiastic about storytelling,
+          pre-production planning, shot breakdowns, scheduling
+          and on-set execution.
         </p>
 
-        <div className="mt-8 text-gray-300 space-y-2">
+        <div className="mt-8 text-gray-300 space-y-3">
+          <p>✔ Assistant Direction & On-Set Coordination</p>
           <p>✔ Script Breakdown & Scene Planning</p>
           <p>✔ Shot Division & Storyboarding</p>
-          <p>✔ On-Set Coordination</p>
+          <p>✔ Screenplay & Dialogue Writing</p>
           <p>✔ Production Scheduling</p>
         </div>
       </section>
+
 
       {/* SKILLS */}
       <motion.section
@@ -111,25 +150,30 @@ export default function Home() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="py-20 px-10 bg-black text-center"
+        className="py-20 px-6 md:px-10 bg-black text-center"
       >
-        <h2 className="text-3xl font-semibold mb-12">Skills & Strengths</h2>
+
+        <h2 className="text-3xl font-semibold mb-12">
+          Skills & Strengths
+        </h2>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+
           {[
             {
               title: "Pre-Production",
-              desc: "Script breakdown, location planning, casting coordination",
+              desc: "Script breakdown, location planning, casting coordination and scheduling.",
             },
             {
               title: "On-Set Execution",
-              desc: "Managing call sheets, coordinating departments, maintaining schedules",
+              desc: "Assistant direction, coordinating departments, maintaining schedules and continuity.",
             },
             {
               title: "Creative Development",
-              desc: "Shot division, visual storytelling, screenplay development",
+              desc: "Shot division, visual storytelling, screenplay and dialogue development.",
             },
           ].map((skill, index) => (
+
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 40 }}
@@ -141,23 +185,39 @@ export default function Home() {
               <h3 className="text-white text-lg font-semibold mb-3">
                 {skill.title}
               </h3>
-              <p className="text-gray-400">{skill.desc}</p>
+
+              <p className="text-gray-400">
+                {skill.desc}
+              </p>
             </motion.div>
+
           ))}
         </div>
       </motion.section>
 
+
       {/* FEATURED FILMS */}
-      <section className="py-24 px-10 bg-zinc-950">
+      <section className="py-24 px-6 md:px-10 bg-zinc-950">
+
         <h2 className="text-4xl font-semibold text-center mb-16">
           Film Posters
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+
           {[
-            { title: "HOUSE HUSBAND", year: "2026", img: "House_Husband1.jpg" },
-            { title: "POLAMPAL", year: "2024", img: "polampal_title.png" },
+            {
+              title: "HOUSE HUSBAND",
+              year: "2026",
+              img: "House_Husband1.jpg",
+            },
+            {
+              title: "POLAMPAL",
+              year: "2024",
+              img: "polampal_title.png",
+            },
           ].map((film, index) => (
+
             <motion.div
               key={index}
               whileHover={{ scale: 1.03 }}
@@ -171,60 +231,159 @@ export default function Home() {
               />
 
               <div className="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition duration-500 flex flex-col justify-center items-center text-center p-4">
-                <h3 className="text-2xl font-semibold">{film.title}</h3>
-                <p className="text-gray-300 mt-2">{film.year}</p>
+                <h3 className="text-2xl font-semibold">
+                  {film.title}
+                </h3>
+
+                <p className="text-gray-300 mt-2">
+                  {film.year}
+                </p>
               </div>
             </motion.div>
+
           ))}
         </div>
       </section>
+
 
       {/* SHORT FILMS */}
-      <section className="py-24 px-10 bg-black">
-        <h2 className="text-4xl text-center mb-16">Short Films</h2>
+      <section className="py-24 px-6 md:px-10 bg-black">
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {[
-            { type: "youtube", id: "efehaY81rZM" }, // House Husband
-            {
-              type: "drive",
-              link: "https://drive.google.com/file/d/1uEjNdlq_atAnB4ZfNWhJC-ttH4NYr883/view?usp=sharing",
-              title: "Polampal",
-            },
-          ].map((film, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.02 }}
-              className="relative w-full h-80 overflow-hidden rounded-xl shadow-2xl flex items-center justify-center bg-black"
-            >
-              {film.type === "youtube" ? (
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src={`https://www.youtube.com/embed/${film.id}`}
-                  allowFullScreen
-                ></iframe>
-              ) : (
-                <div
-                  className="relative w-full h-full cursor-pointer group"
-                  onClick={() => window.open(film.link, "_blank")}
-                >
-                  <Image
-                    src="/images/polampal_title.png" // your poster image
-                    alt="Polampal"
-                    fill
-                    className="object-cover"
-                  />
+        <h2 className="text-4xl text-center mb-16">
+          Short Films
+        </h2>
 
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col justify-center items-center text-center">
-                    <h3 className="text-2xl font-semibold">{film.title}</h3>
-                    <p className="mt-2 text-gray-300">Click to Watch</p>
-                  </div>
-                </div>
-              )}
-            </motion.div>
-          ))}
+        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+
+          {/* HOUSE HUSBAND */}
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            className="relative w-full aspect-video overflow-hidden rounded-xl shadow-2xl bg-black"
+          >
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/efehaY81rZM"
+              title="House Husband Short Film"
+              allowFullScreen
+            />
+          </motion.div>
+
+
+          {/* POLAMPAL */}
+          <motion.a
+            href="https://drive.google.com/file/d/1uEjNdlq_atAnB4ZfNWhJC-ttH4NYr883/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.02 }}
+            className="relative w-full aspect-video overflow-hidden rounded-xl shadow-2xl group"
+          >
+            <Image
+              src="/images/polampal_title.png"
+              alt="Polampal"
+              fill
+              className="object-cover"
+            />
+
+            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col justify-center items-center text-center">
+              <h3 className="text-2xl font-semibold">
+                POLAMPAL
+              </h3>
+
+              <p className="mt-2 text-gray-300">
+                Click to Watch
+              </p>
+            </div>
+          </motion.a>
+
         </div>
       </section>
+
+
+      {/* NEW SECTION: PROFESSIONAL CREDITS */}
+      <motion.section
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9 }}
+        viewport={{ once: true }}
+        className="py-24 px-6 md:px-10 bg-zinc-950 border-y border-zinc-800"
+      >
+
+        <div className="max-w-6xl mx-auto">
+
+          <div className="text-center mb-14">
+
+            <p className="text-sm tracking-[0.3em] text-gray-500 uppercase mb-4">
+              Professional Experience
+            </p>
+
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-wide">
+              On-Screen Credits
+            </h2>
+
+            <p className="mt-5 text-gray-400 text-lg">
+              Assistant Director – Crime Patrol
+            </p>
+
+            <p className="mt-3 max-w-2xl mx-auto text-gray-500 leading-7">
+              A glimpse of my professional work and on-screen
+              credits as an Assistant Director in the Crime Patrol
+              web series.
+            </p>
+
+          </div>
+
+
+          {/* CREDIT SCREENSHOTS */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            {credits.map((credit, index) => (
+
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.15 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+
+                <div className="relative aspect-video overflow-hidden rounded-xl border border-zinc-700 bg-black shadow-2xl">
+
+                  <Image
+                    src={credit.image}
+                    alt={credit.title}
+                    fill
+                    className="object-contain transition duration-500 group-hover:scale-105"
+                  />
+
+                </div>
+
+                <div className="mt-5 text-center">
+
+                  <h3 className="text-lg font-semibold text-white">
+                    {credit.title}
+                  </h3>
+
+                  <p className="text-sm text-gray-500 mt-2">
+                    {credit.description}
+                  </p>
+
+                </div>
+
+              </motion.div>
+
+            ))}
+
+          </div>
+
+
+          <p className="text-center text-xs text-gray-600 mt-12 tracking-wide">
+            SELECTED PROFESSIONAL WORK & SCREEN CREDITS
+          </p>
+
+        </div>
+      </motion.section>
+
 
       {/* SCREENPLAYS */}
       <motion.section
@@ -232,57 +391,108 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="py-24 px-10 text-center bg-black"
+        className="py-24 px-6 md:px-10 text-center bg-black"
       >
-        <h2 className="text-4xl mb-12 tracking-wide">Screenplays & Scripts</h2>
+
+        <h2 className="text-4xl mb-12 tracking-wide">
+          Screenplays & Scripts
+        </h2>
 
         <div className="space-y-8 max-w-2xl mx-auto">
+
           {[
-            { title: "House Husband", file: "/House-Husband.pdf" },
-            { title: "Polampal", file: "/polampal-2.pdf" },
-            { title: "Treasunt", file: "/Treasunt-5.pdf" },
-            { title: "Drama Script", file: "/girlss-drama.pdf" },
+            {
+              title: "House Husband",
+              file: "/House-Husband.pdf",
+            },
+            {
+              title: "Polampal",
+              file: "/polampal-2.pdf",
+            },
+            {
+              title: "Treasunt",
+              file: "/Treasunt-5.pdf",
+            },
+            {
+              title: "Drama Script",
+              file: "/girlss-drama.pdf",
+            },
           ].map((script, index) => (
+
             <motion.div
               key={index}
               whileHover={{ scale: 1.03 }}
               className="border border-zinc-700 p-6 rounded-xl bg-zinc-900/40 backdrop-blur-lg hover:bg-zinc-800 transition duration-500 shadow-xl"
             >
+
               <h3 className="text-xl font-semibold text-white">
                 {script.title}
               </h3>
-              <p className="text-gray-400">Short Film Script</p>
+
+              <p className="text-gray-400">
+                Short Film Script
+              </p>
 
               <a
                 href={script.file}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block mt-4 text-sm underline text-gray-300 hover:text-white"
               >
                 View Script (PDF)
               </a>
+
             </motion.div>
+
           ))}
+
         </div>
       </motion.section>
 
+
       {/* CONTACT */}
-      <section className="py-24 text-center bg-zinc-950 border-t border-zinc-800">
-        <h2 className="text-4xl mb-6">Let’s Collaborate</h2>
+      <section className="py-24 px-6 text-center bg-zinc-950 border-t border-zinc-800">
+
+        <h2 className="text-4xl mb-6">
+          Let’s Collaborate
+        </h2>
 
         <p className="text-gray-400 max-w-xl mx-auto">
-          I am open to working as an Assistant Director in feature films, short
-          films, and digital projects.
+          I am open to working as an Assistant Director, Writer
+          and Creative Team Member in feature films, web series
+          and digital projects.
         </p>
 
         <div className="mt-8 text-gray-300">
-          <p>gkdirector14@gmail.com</p>
-          <p className="mt-2">+91 9626117994</p>
+
+          <p>
+            <a
+              href="mailto:gkdirector14@gmail.com"
+              className="hover:text-white transition"
+            >
+              gkdirector14@gmail.com
+            </a>
+          </p>
+
+          <p className="mt-2">
+            <a
+              href="tel:+919626117994"
+              className="hover:text-white transition"
+            >
+              +91 9626117994
+            </a>
+          </p>
+
         </div>
+
       </section>
 
+
+      {/* FOOTER */}
       <footer className="text-center py-6 text-gray-600 text-sm bg-black">
-        © 2026 Gokul Kanna | Assistant Director Portfolio
+        © 2026 Gokul Kanna | Assistant Director | Writer | Filmmaker
       </footer>
+
     </main>
   );
 }
