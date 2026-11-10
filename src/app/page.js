@@ -331,7 +331,7 @@ export default function Home() {
       className="relative max-w-3xl mx-auto rounded-xl overflow-hidden border border-zinc-700 shadow-2xl bg-black"
     >
       <Image
-        src="/images/credits/crime-patrol-credit.png"
+        src="/images/crime-patrol-credit.png"
         alt="Gokul Kanna - Crime Patrol Assistant Director end credits"
         width={1200}
         height={675}
