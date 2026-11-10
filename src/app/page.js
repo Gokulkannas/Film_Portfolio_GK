@@ -299,90 +299,55 @@ export default function Home() {
       </section>
 
 
-      {/* NEW SECTION: PROFESSIONAL CREDITS */}
-      <motion.section
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9 }}
-        viewport={{ once: true }}
-        className="py-24 px-6 md:px-10 bg-zinc-950 border-y border-zinc-800"
-      >
 
-        <div className="max-w-6xl mx-auto">
+{/* PROFESSIONAL EXPERIENCE – CRIME PATROL */}
+<motion.section
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.9 }}
+  viewport={{ once: true }}
+  className="py-24 px-6 md:px-10 bg-zinc-950 border-y border-zinc-800"
+>
+  <div className="max-w-4xl mx-auto text-center">
 
-          <div className="text-center mb-14">
+    <p className="text-sm tracking-[0.3em] text-gray-500 uppercase mb-4">
+      Professional Experience
+    </p>
 
-            <p className="text-sm tracking-[0.3em] text-gray-500 uppercase mb-4">
-              Professional Experience
-            </p>
+    <h2 className="text-4xl md:text-5xl font-semibold mb-6">
+      On-Screen Credits
+    </h2>
 
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-wide">
-              On-Screen Credits
-            </h2>
+    <h3 className="text-2xl font-semibold text-white">
+      Crime Patrol
+    </h3>
 
-            <p className="mt-5 text-gray-400 text-lg">
-              Assistant Director – Crime Patrol
-            </p>
+    <p className="text-gray-400 mt-3 mb-10">
+      Assistant Director
+    </p>
 
-            <p className="mt-3 max-w-2xl mx-auto text-gray-500 leading-7">
-              A glimpse of my professional work and on-screen
-              credits as an Assistant Director in the Crime Patrol
-              web series.
-            </p>
+    <motion.div
+      whileHover={{ scale: 1.02 }}
+      className="relative max-w-3xl mx-auto rounded-xl overflow-hidden border border-zinc-700 shadow-2xl bg-black"
+    >
+      <Image
+        src="/images/credits/crime-patrol-credit.png"
+        alt="Gokul Kanna - Crime Patrol Assistant Director end credits"
+        width={1200}
+        height={675}
+        className="w-full h-auto object-contain"
+      />
+    </motion.div>
 
-          </div>
+    <p className="mt-8 text-gray-400 leading-8 max-w-2xl mx-auto">
+      Proud to have worked as an Assistant Director
+      on the Crime Patrol web series. This on-screen
+      credit represents my professional contribution
+      to the project.
+    </p>
 
-
-          {/* CREDIT SCREENSHOTS */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            {credits.map((credit, index) => (
-
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.15 }}
-                viewport={{ once: true }}
-                className="group"
-              >
-
-                <div className="relative aspect-video overflow-hidden rounded-xl border border-zinc-700 bg-black shadow-2xl">
-
-                  <Image
-                    src={credit.image}
-                    alt={credit.title}
-                    fill
-                    className="object-contain transition duration-500 group-hover:scale-105"
-                  />
-
-                </div>
-
-                <div className="mt-5 text-center">
-
-                  <h3 className="text-lg font-semibold text-white">
-                    {credit.title}
-                  </h3>
-
-                  <p className="text-sm text-gray-500 mt-2">
-                    {credit.description}
-                  </p>
-
-                </div>
-
-              </motion.div>
-
-            ))}
-
-          </div>
-
-
-          <p className="text-center text-xs text-gray-600 mt-12 tracking-wide">
-            SELECTED PROFESSIONAL WORK & SCREEN CREDITS
-          </p>
-
-        </div>
-      </motion.section>
+  </div>
+</motion.section>
 
 
       {/* SCREENPLAYS */}
