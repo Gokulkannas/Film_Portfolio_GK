@@ -319,7 +319,7 @@ export default function Home() {
     </h2>
 
     <h3 className="text-2xl font-semibold text-white">
-      Crime Patrol
+      Crime Patrol in SonyLiv
     </h3>
 
     <p className="text-gray-400 mt-3 mb-10">
